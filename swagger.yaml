@@ -189,6 +189,56 @@ paths:
       responses:
         '200':
           description: Deleted Successfully.
+  '/people/with-hobby/{id}':
+    get:
+      tags:
+        - People
+      summary: Retrieve a person with hobby
+      description: ''
+      operationId: getPeopleWithHobby
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id of the person to be retrieve
+          type: string
+      responses:
+        '200':
+          description: successful request
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PeopleGetHobby'
+  '/people/hobby/{id}':
+    patch:
+      tags:
+        - People
+      summary: Update person's hobby
+      description: ''
+      operationId: updatePeopleHobby
+      consumes:
+        - application/json
+      produces:
+        - string
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: id of the person to be updated
+          type: string
+        - in: body
+          name: body
+          description: Array of hobby _id
+          required: true
+          schema:
+            $ref: '#/definitions/PersonPatchHobby'
+      responses:
+        '404':
+          description: Required fields missing.
+        '204':
+          description: Updated Successfully.
 definitions:
   HobbyPost:
     type: object
@@ -241,6 +291,31 @@ definitions:
       hobbies:
         type: string
         example: ["60e2aa19b2441802c07f312d","60e2aa19b2441802c07f313s"]
+  PersonPatchHobby:
+    type: object
+    properties:
+      hobbies:
+        type: string
+        example: ["60e2aa19b2441802c07f312d","60e2aa19b2441802c07f313s"]
+  PeopleGetHobby:
+    type: object
+    properties:
+      _id:
+        type: string
+        example: '60e2aa19b2441802c07f312d'
+      firstName:
+        type: string
+        example: Rodney
+      lastName:
+        type: string
+        example: Lingganay
+      age:
+        type: integer
+        example: 26
+      hobbies:
+        type: "array"
+        items:
+            $ref: "#/definitions/HobbyGet"
 externalDocs:
   description: Find out more about Swagger
   url: 'http://swagger.io'

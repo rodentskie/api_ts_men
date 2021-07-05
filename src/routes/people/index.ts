@@ -151,7 +151,7 @@ router.patch('/hobby/:id', async (req, res) => {
             resolve(data);
         });
     });
-    return res.status(201).send(`Hobby inserted successfully.`);
+    return res.status(204).send(`Hobby inserted successfully.`);
 });
 
 // delete
