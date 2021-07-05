@@ -1,0 +1,33 @@
+{
+  "name": "api_ts_men",
+  "version": "1.0.0",
+  "description": "API TS MongoDB",
+  "main": "index.ts",
+  "scripts": {
+    "build": "npx rimraf build/ && prettier --write src/**/* && tsc",
+    "start": "node build/index",
+    "dev": "nodemon src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodentskie/api_ts_men.git"
+  },
+  "author": "Rodney Lingganay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodentskie/api_ts_men/issues"
+  },
+  "homepage": "https://github.com/rodentskie/api_ts_men#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.12",
+    "@types/mongoose": "^5.11.97"
+  }
+}
