@@ -6,7 +6,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:3002"
-    volumes:
-      - ./api_ts_men:/usr/src/app
-volumes:
-  api_ts_men:
+
+# volumes will be on the docker-compose to be deploy on stack
