@@ -5,7 +5,7 @@ COPY package*.json ./
 USER root
 
 # install global package
-RUN npm install -g prettier
+RUN npm install -g prettier typescript
 
 RUN npm install --only-prod
 COPY . .
