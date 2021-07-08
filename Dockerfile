@@ -8,6 +8,6 @@ RUN npm install --only-prod
 COPY . .
 EXPOSE 3002
 
-RUN ["chmod", "+x", "start.sh"]
+RUN ["npm", "run", "build"]
 
-CMD ["./start.sh"]
+CMD ["npm", "start"]
