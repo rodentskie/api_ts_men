@@ -18,11 +18,6 @@ const server = app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}.`);
 });
 
-// greetings
-app.use('/', (req, res, next) => {
-    res.send('Welcome to this API . . .');
-});
-
 // routes
 app.use('/api/people', require('./routes/people/index'));
 app.use('/api/hobby', require('./routes/hobby/index'));
