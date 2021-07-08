@@ -9,11 +9,9 @@ RUN npm install -g prettier typescript
 
 RUN npm install --only-prod
 
-COPY . .
+COPY . ./
 
 RUN ["npm", "run", "build"]
-
-ADD . .
 
 CMD ["npm", "start"]
 
