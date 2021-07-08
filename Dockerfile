@@ -4,6 +4,9 @@ COPY package*.json ./
 
 USER root
 
+# install global package
+RUN npm install -g prettier
+
 RUN npm install --only-prod
 COPY . .
 EXPOSE 3002
