@@ -13,7 +13,7 @@ COPY . .
 
 RUN ["npm", "run", "build"]
 
-ADD ./build .
+ADD . .
 
 CMD ["npm", "start"]
 
