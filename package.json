@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "build": "npx rimraf build/ && prettier --write src/**/* && tsc",
-    "start": "node build/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node build/index",
+    "dev": "nodemon src/index"
   },
   "repository": {
     "type": "git",
