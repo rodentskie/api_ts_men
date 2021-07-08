@@ -8,9 +8,10 @@ USER root
 RUN npm install -g prettier typescript
 
 RUN npm install --only-prod
-COPY . .
-EXPOSE 3002
 
 RUN ["npm", "run", "build"]
+
+COPY . .
+EXPOSE 3002
 
 CMD ["npm", "start"]
