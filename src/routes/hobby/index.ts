@@ -97,7 +97,7 @@ router.patch('/:id', async (req, res) => {
             }
         );
     });
-    return res.status(204).send(`Hobby updated successfully.`);
+    return res.sendStatus(204);
 });
 
 // delete
@@ -118,7 +118,9 @@ router.delete('/:id', async (req, res) => {
             resolve(data);
         });
     });
-    return res.status(200).send(`Hobby deleted successfully.`);
+    // if result is null means no data was deleted
+    if (!result) return res.status(400).send(`No data was deleted.`);
+    return res.sendStatus(204);
 });
 
 export = router;

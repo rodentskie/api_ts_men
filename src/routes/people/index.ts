@@ -123,7 +123,7 @@ router.patch('/:id', async (req, res) => {
             }
         );
     });
-    return res.status(201).send(`People updated successfully.`);
+    return res.sendStatus(204);
 });
 
 // patch hobby to person
@@ -151,7 +151,8 @@ router.patch('/hobby/:id', async (req, res) => {
             resolve(data);
         });
     });
-    return res.status(204).send(`Hobby inserted successfully.`);
+    console.log(result);
+    return res.sendStatus(204);
 });
 
 // delete
@@ -172,7 +173,9 @@ router.delete('/:id', async (req, res) => {
             resolve(data);
         });
     });
-    return res.status(201).send(`People deleted successfully.`);
+    // if result is null means no data was deleted
+    if (!result) return res.status(400).send(`No data was deleted.`);
+    return res.sendStatus(204);
 });
 
 export = router;
