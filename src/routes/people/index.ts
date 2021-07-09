@@ -151,7 +151,6 @@ router.patch('/hobby/:id', async (req, res) => {
             resolve(data);
         });
     });
-    console.log(result);
     return res.sendStatus(204);
 });
 
