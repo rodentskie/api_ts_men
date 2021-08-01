@@ -133,10 +133,6 @@ router.patch('/hobby/:id', async (req, res) => {
     const { hobbies } = req.body; // hobbies of person
     if (hobbies.length == 0) return res.status(400).send(`Please enter hobbies.`);
 
-    for (let i = 0; i < hobbies.length; i++) {
-        const e = hobbies[i]; // id of hobbies
-    }
-
     // connect to db
     const db = await conn();
 
